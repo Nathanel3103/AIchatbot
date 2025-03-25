@@ -1,0 +1,61 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: light-dark(#f5f5f5, #121212);
+  padding: 0;
+  overflow: hidden;
+}
+
+.Header {
+  text-align: center;
+  padding: 20px;
+  background: light-dark(#ffffff, #1e1e1e);
+  box-shadow: 0 2px 10px light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.2));
+  z-index: 10;
+}
+
+.Logo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.Logo:hover {
+  transform: rotate(15deg);
+}
+
+.Title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: light-dark(#333333, #f0f0f0);
+  font-weight: 600;
+}
+
+.ChatContainer {
+  flex-grow: 1;
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background: light-dark(#ffffff, #121212);
+}
+
+/* Custom scrollbar */
+.ChatContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ChatContainer::-webkit-scrollbar-track {
+  background: light-dark(#f1f1f1, #2d2d2d);
+}
+
+.ChatContainer::-webkit-scrollbar-thumb {
+  background: light-dark(#c1c1c1, #555555);
+  border-radius: 4px;
+}
+
+.ChatContainer::-webkit-scrollbar-thumb:hover {
+  background: light-dark(#a8a8a8, #777777);
+}

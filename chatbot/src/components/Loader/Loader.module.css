@@ -1,0 +1,50 @@
+.LoaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: light-dark(rgba(243, 243, 243, 0.8), rgba(23, 23, 23, 0.9));
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+.Loader {
+  width: 80px;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.Loader:before,
+.Loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: light-dark(#4d90fe, #5e9eff);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.Loader:after {
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .LoaderWrapper {
+    background: rgba(23, 23, 23, 0.95);
+  }
+}

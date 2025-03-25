@@ -1,0 +1,112 @@
+.Chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.Group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.Group:nth-last-of-type(2) {
+  min-height: calc(100% - 12px);
+}
+
+.Message {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  animation: messageAppear 0.2s ease-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.1s ease, opacity 0.1s ease;
+
+  &[data-role="user"] {
+    align-self: flex-end;
+    background: light-dark(#4d90fe, #5e9eff);
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+
+  &[data-role="assistant"] {
+    align-self: flex-start;
+    background: light-dark(#f0f0f0, #2d2d2d);
+    color: light-dark(#333, #f0f0f0);
+    border-bottom-left-radius: 4px;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+}
+
+/* Typing indicator */
+.TypingIndicator {
+  display: flex;
+  gap: 6px;
+  padding: 12px 16px;
+  background: light-dark(#f0f0f0, #2d2d2d);
+  border-radius: 18px;
+  align-self: flex-start;
+  margin-bottom: 8px;
+  border-bottom-left-radius: 4px;
+}
+
+.TypingDot {
+  width: 8px;
+  height: 8px;
+  background: light-dark(#666, #999);
+  border-radius: 50%;
+  animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.TypingDot:nth-child(1) { animation-delay: 0s; }
+.TypingDot:nth-child(2) { animation-delay: 0.2s; }
+.TypingDot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes messageAppear {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes typingAnimation {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}
+
+/* Timestamp styling */
+.MessageTimestamp {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Code blocks in messages */
+.Message pre {
+  background: light-dark(#f5f5f5, #252525);
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.Message code {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
