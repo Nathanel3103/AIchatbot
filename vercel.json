@@ -1,0 +1,6 @@
+{
+    "buildCommand": "cd chatbot && npm run build",
+    "outputDirectory": "chatbot/dist",
+    "devCommand": "cd chatbot && npm run dev",
+    "installCommand": "cd chatbot && npm install"
+  }
