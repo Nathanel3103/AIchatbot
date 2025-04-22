@@ -1,0 +1,30 @@
+{
+  "name": "aichatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathanel3103/AIchatbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Nathanel3103/AIchatbot/issues"
+  },
+  "homepage": "https://github.com/Nathanel3103/AIchatbot#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vercel": "^41.6.2",
+    "vite": "^6.3.2"
+  }
+}
