@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd chatbot && npm install && ./node_modules/.bin/vite build",
+  "buildCommand": "cd chatbot && npm install && ./node_modules/.bin/npm run build",
   "outputDirectory": "chatbot/dist",
   "routes": [
     {
