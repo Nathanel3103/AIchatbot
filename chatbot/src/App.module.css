@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: light-dark(#f5f5f5, #121212);
+  background: #f5f5f5;
   padding: 0;
   overflow: hidden;
 }
@@ -10,8 +10,8 @@
 .Header {
   text-align: center;
   padding: 20px;
-  background: light-dark(#ffffff, #1e1e1e);
-  box-shadow: 0 2px 10px light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.2));
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   z-index: 10;
 }
 
@@ -29,7 +29,7 @@
 .Title {
   margin: 0;
   font-size: 1.5rem;
-  color: light-dark(#333333, #f0f0f0);
+  color: #333333;
   font-weight: 600;
 }
 
@@ -39,7 +39,7 @@
   padding: 20px;
   overflow-y: auto;
   scroll-behavior: smooth;
-  background: light-dark(#ffffff, #121212);
+  background: #ffffff;
 }
 
 /* Custom scrollbar */
@@ -48,14 +48,45 @@
 }
 
 .ChatContainer::-webkit-scrollbar-track {
-  background: light-dark(#f1f1f1, #2d2d2d);
+  background: #f1f1f1;
 }
 
 .ChatContainer::-webkit-scrollbar-thumb {
-  background: light-dark(#c1c1c1, #555555);
+  background: #c1c1c1;
   border-radius: 4px;
 }
 
 .ChatContainer::-webkit-scrollbar-thumb:hover {
-  background: light-dark(#a8a8a8, #777777);
+  background: #a8a8a8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .App {
+    background: #121212;
+  }
+
+  .Header {
+    background: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .Title {
+    color: #f0f0f0;
+  }
+
+  .ChatContainer {
+    background: #121212;
+  }
+
+  .ChatContainer::-webkit-scrollbar-track {
+    background: #2d2d2d;
+  }
+
+  .ChatContainer::-webkit-scrollbar-thumb {
+    background: #555555;
+  }
+
+  .ChatContainer::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+  }
 }
