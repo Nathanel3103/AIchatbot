@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "npm install && npx vite build",
-  "outputDirectory": "dist",
+  "buildCommand": "cd chatbot && npm install && npm run build",
+  "outputDirectory": "chatbot/dist",
   "routes": [
     {
       "src": "/assets/(.*)",

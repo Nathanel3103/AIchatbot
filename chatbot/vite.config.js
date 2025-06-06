@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  root: 'chatbot',
   plugins: [react()],
   build: {
     outDir: 'dist', // Explicitly set output directory to match vercel.json
